@@ -104,10 +104,10 @@ const page = () => {
           <Button onClick={handleSubmit(SendMessage)}>Send message</Button>
         </div>
         <div className='w-full max-w-xl grid gap-2'>
-          <Button className='w-fit' onClick={suggestNewMessages}>Suggest New Messages</Button>
+          <Button className='w-fit' onClick={suggestNewMessages}>Suggest Messages <span className='text-lg'>֎🇦🇮</span></Button>
           {
             messages.length === 0 ? (
-              <h1 className='font-semibold text-neutral-800'>Click on given button For get AI messages</h1>
+              <h1 className='font-semibold text-neutral-800'>Click on given button For get AI Suggestion</h1>
             ) : (
               <h1 className='font-semibold text-neutral-800'>Click on any message below to select it.</h1>
             )
