@@ -1,11 +1,11 @@
 import connectdb from "@/lib/connectdb";
 import UserModel from "@/models/user.model";
 import { getServerSession, User } from "next-auth";
-import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { authOptions } from "../auth/[...nextauth]/options";
 import mongoose from "mongoose";
 
-export async function GET(req: NextResponse){
+export async function GET(req: NextRequest){
     try {
         await connectdb()
 
