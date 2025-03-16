@@ -53,7 +53,7 @@ const page = () => {
     }
   },[session])
 
-  const getAllMessages = useCallback(async ()=>{
+  const getAllMessages = async ()=>{
     try {
       const response = await axios.get(`/api/get-messages`)
       const { data : responseData } = response
@@ -72,9 +72,9 @@ const page = () => {
         description: "Failed to fetch messages",
       })
     }
-  },[])
+  }
 
-  const deleteMessage = useCallback(async (messageId:string)=>{
+  const deleteMessage = async (messageId:string)=>{
     try {
       const response = await axios.post(`/api/delete-message`,{
         messageId
@@ -99,7 +99,7 @@ const page = () => {
         description: "Failed to delete!",
       })
     }
-  },[])
+  }
 
   useEffect(() => {
     handleAcceptMessage()
@@ -110,7 +110,7 @@ const page = () => {
     }
   },[session,user])
 
-  const handleMessageStatus = useCallback(async({acceptMessages}:{acceptMessages:Boolean})=>{
+  const handleMessageStatus = async({acceptMessages}:{acceptMessages:Boolean})=>{
     setSwitchLoading(true)
     try {
       const response = await axios.post(`/api/accept-messages`,{
@@ -139,7 +139,7 @@ const page = () => {
     } finally {
       setSwitchLoading(false)
     }
-  },[])
+  }
 
   const copiedToClipboard = () => {
     navigator.clipboard.writeText(userUrl || '')
