@@ -1,5 +1,5 @@
 "use client"
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Textarea } from "@/components/ui/textarea"
 import { useParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
@@ -12,9 +12,9 @@ import axios from 'axios'
 
 
 const page = () => {
-  const params = useParams()
-  const username = params.username
-  const [messages, setMessages] = useState<Array<string>>([])
+  const params = useParams();
+  const username = params.username;
+  const [messages, setMessages] = useState<Array<string>>([]);
 
   type CreatemessageValidationSchema = z.infer<typeof messageValidationSchema>
 
