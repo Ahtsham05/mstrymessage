@@ -103,9 +103,9 @@ const Page = () => {
   useEffect(() => {
     handleAcceptMessage();
     getAllMessages();
-
-    if (session?.user?.name) {
-      setUserUrl(`${window.location.origin}/u/${session.user.name}`);
+    // console.log("session =>",session)
+    if (session?.user?.username) {
+      setUserUrl(`${window.location.origin}/u/${session.user.username}`);
     }
   }, [session, getAllMessages, handleAcceptMessage]);
 
